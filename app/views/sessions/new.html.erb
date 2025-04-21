@@ -1,0 +1,21 @@
+<h1>Iniciar Sesión</h1>
+
+<% if flash.alert.present? %>
+  <p style="color: red"><%= flash.alert %></p>
+<% end %>
+
+<%= form_with(scope: :session, url: session_path) do |f| %>
+  <div>
+    <%= f.label :username, 'Nombre de Usuario' %><br>
+    <%= f.text_field :username %>
+  </div>
+
+  <div>
+    <%= f.label :password, 'Contraseña' %><br>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.submit 'Iniciar Sesión' %>
+  </div>
+<% end %>
